@@ -30,13 +30,10 @@ which end with io (example@example.io) */
 
 function ioEmail(email) {
     // Add your logic.
-    if (/@/.test(email) && /.io$/.test(email)) {
-        if (email.match(/@/g) != 1){
-        return false;
-        }
-    }
+    let emailCon = /^[^@\s]+@[^@\s]+\.io$/;
 
-    return true;
+
+    return (email && email.endsWith(".io") && emailCon.test(email));
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
